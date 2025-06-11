@@ -1,0 +1,292 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-05-21 00:31:05.410653",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plant_unit",
+  "section_break_wedy",
+  "branch_abbreviation",
+  "naming_series",
+  "transporter_name",
+  "vehicle_number",
+  "gross_weight",
+  "column_break_emyt",
+  "gate_entry_date_and_time",
+  "new_transporter",
+  "driver_name",
+  "tare_weight",
+  "amended_from",
+  "column_break_fzna",
+  "entry_type",
+  "sub_type",
+  "driver_contact_no",
+  "attachment",
+  "section_break_rnko",
+  "supplier_name",
+  "column_break_coyj",
+  "supplier_delivery_challan",
+  "data_qdlw",
+  "column_break_ndqt",
+  "supplier_invoice",
+  "section_break_xfwu",
+  "shipment_number",
+  "shipment_table",
+  "section_break_nmac",
+  "subcontracting_order_number1",
+  "column_break_dpgt",
+  "subcontractor_name1",
+  "section_break_zxbh",
+  "subcontracting_order_number",
+  "column_break_rxjv",
+  "subcontractor_name",
+  "column_break_moqd",
+  "subcontractor_delivery_challan_copy",
+  "data_licz"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gate Entry",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "transporter_name",
+   "fieldtype": "Link",
+   "label": "Transporter Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "gross_weight",
+   "fieldtype": "Float",
+   "label": "Gross Weight"
+  },
+  {
+   "default": "now",
+   "fieldname": "gate_entry_date_and_time",
+   "fieldtype": "Datetime",
+   "label": "Gate Entry Date and Time"
+  },
+  {
+   "fieldname": "new_transporter",
+   "fieldtype": "Data",
+   "label": "New Transporter"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "tare_weight",
+   "fieldtype": "Float",
+   "label": "Tare Weight"
+  },
+  {
+   "fieldname": "entry_type",
+   "fieldtype": "Select",
+   "label": "Entry Type",
+   "options": "Inward Entry\nOutward Entry"
+  },
+  {
+   "fieldname": "sub_type",
+   "fieldtype": "Select",
+   "label": "Sub Type",
+   "options": "\nPurchase\nSales\nSubcontracting"
+  },
+  {
+   "default": "+91-",
+   "fieldname": "driver_contact_no",
+   "fieldtype": "Phone",
+   "label": "Driver Contact No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachment",
+   "fieldtype": "Attach",
+   "label": "Attachment"
+  },
+  {
+   "fieldname": "supplier_name",
+   "fieldtype": "Link",
+   "label": "Supplier Name",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "supplier_delivery_challan",
+   "fieldtype": "Data",
+   "label": "Supplier Delivery Challan"
+  },
+  {
+   "fieldname": "data_qdlw",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "supplier_invoice",
+   "fieldtype": "Data",
+   "label": "Supplier Invoice"
+  },
+  {
+   "fieldname": "shipment_number",
+   "fieldtype": "Link",
+   "label": "Shipment Number",
+   "options": "Shipment"
+  },
+  {
+   "fieldname": "shipment_table",
+   "fieldtype": "Table",
+   "label": "Shipment Table",
+   "options": "Gate Entry Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subcontracting_order_number",
+   "fieldtype": "Link",
+   "label": "Subcontracting order Number",
+   "options": "Subcontracting Order"
+  },
+  {
+   "fieldname": "subcontractor_name",
+   "fieldtype": "Data",
+   "label": "Subcontractor Name"
+  },
+  {
+   "fieldname": "subcontractor_delivery_challan_copy",
+   "fieldtype": "Data",
+   "label": "Subcontractor Delivery Challan"
+  },
+  {
+   "fieldname": "subcontracting_order_number1",
+   "fieldtype": "Link",
+   "label": "Subcontracting order Number",
+   "options": "Subcontracting Order"
+  },
+  {
+   "fieldname": "subcontractor_name1",
+   "fieldtype": "Data",
+   "label": "Subcontractor Name"
+  },
+  {
+   "fieldname": "data_licz",
+   "fieldtype": "Data",
+   "read_only": 1
+  },
+  {
+   "fieldname": "plant_unit",
+   "fieldtype": "Link",
+   "label": "Plant Unit",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "plant_unit.custom_branch_abbreviation",
+   "fieldname": "branch_abbreviation",
+   "fieldtype": "Data",
+   "label": "Branch Abbreviation"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Series",
+   "no_copy": 1,
+   "options": "branch_abbreviation.-.GE.-.YYYY.MM.###",
+   "print_hide": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_wedy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_emyt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fzna",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.entry_type === 'Inward Entry' && doc.sub_type === 'Purchase'",
+   "fieldname": "section_break_rnko",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_coyj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ndqt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.entry_type === 'Outward Entry' && doc.sub_type === 'Sales'",
+   "fieldname": "section_break_xfwu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.entry_type === 'Outward Entry' && doc.sub_type === 'Subcontracting'",
+   "fieldname": "section_break_nmac",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_dpgt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.entry_type === 'Inward Entry' && doc.sub_type === 'Subcontracting'",
+   "fieldname": "section_break_zxbh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rxjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_moqd",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-06-07 15:22:15.745092",
+ "modified_by": "Administrator",
+ "module": "Balaji",
+ "name": "Gate Entry",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
