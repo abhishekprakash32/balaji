@@ -1,1 +1,24 @@
+frappe.ui.form.on('Purchase Receipt', {
+    onload: function (frm) {
+        if (frm.doc.subcontracting_receipt) {
+            frappe.db.get_value('Subcontracting Receipt', frm.doc.subcontracting_receipt, 'custom_gate_entry_new')
+                .then(r => {
+                    if (r && r.message) {
+                        frm.set_value('custom_gate_entry_new', r.message.custom_gate_entry_new);
+                    }
+                });
+        }
+    },
+    refresh: function(frm) {
+        frm.set_query('custom_gate_entry_new', function () {
+                return {
+                    filters: {
+                        entry_type: 'Inward Entry',
+                        sub_type: 'Purchase',
+                        docstatus: 1
+                    }
+                };
+            });
+    },
+});
 
